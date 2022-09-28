@@ -5,7 +5,7 @@ import LoginPage from "./Pages/LoginPage";
 import ProductsInfo from "./Pages/ProductsInfo";
 import RegisterPage from "./Pages/RegisterPage";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
-
+import './stylesheets/layout.css'
 function App() {
   return (
     <div className="App">
