@@ -32,3 +32,51 @@
     left:0;
     right:0; 
 }
+
+
+button{
+    border:1px solid rgba(255, 255, 255, 0.589);
+    box-shadow: none;
+    border:1px solid white;
+    color:white;
+    background: #df545b;
+    padding:5px;
+}
+
+button:hover{
+    background-color: brown;
+}
+
+.loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index:99999;
+
+}
+.spinner-border{
+    height:100px;
+    width:100px;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+input,select{
+    height: 35px !important;
+
+
+}
+#uncontrolled-tab-example-tab-products{
+    color:black !important;
+}
+.nav-item button{
+    color:black !important;
+}
+
+.nav-tabs{
+    background-color: cadetblue;
+}

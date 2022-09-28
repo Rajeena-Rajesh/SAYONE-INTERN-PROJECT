@@ -6,6 +6,9 @@ import ProductsInfo from "./Pages/ProductsInfo";
 import RegisterPage from "./Pages/RegisterPage";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import './stylesheets/layout.css'
+import './stylesheets/products.css'
+import './stylesheets/authentication.css'
+
 function App() {
   return (
     <div className="App">
