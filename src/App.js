@@ -2,8 +2,8 @@ import "./App.css";
 import CartPage from "./Pages/CartPage";
 import HomePage from "./Pages/HomePage";
 import LoginPage from "./Pages/LoginPage";
-import ProductsInfo from "./Pages/ProductsInfo";
-import RegisterPage from "./Pages/RegisterPage";
+import ProductInfo from "./Pages/ProductInfo";
+import RegisterPage from "./Pages/Register";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import './stylesheets/layout.css'
 import './stylesheets/products.css'
@@ -14,11 +14,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/Home" exact element={<HomePage />} />
+          <Route path="/" exact element={<HomePage />} />
           <Route path="/Cart" exact element={<CartPage />} />
           <Route path="/Login" exact element={<LoginPage />} />
           <Route path="/Register" exact element={<RegisterPage />} />
-          <Route path="/ProductsInfo" exact element={<ProductsInfo />} />
+          <Route path="/ProductInfo/:productid" exact element={<ProductInfo />} />
         </Routes>
       </BrowserRouter>
     </div>

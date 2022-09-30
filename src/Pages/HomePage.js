@@ -2,20 +2,25 @@ import React, { useEffect, useState } from "react";
 import Layout from "../Components/Layout";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import fireDB from "../fireConfig";
+import { useNavigate } from "react-router-dom";
 //import { fireproducts } from "../firecommerce-products";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
-
+  const navigate=useNavigate()
   useEffect(() => {
     getdata();
   }, []);
 
   async function getdata() {
     try {
+      // axios.get("http://localhost:4000/fireproducts").then((response) => {
+      //   console.log(response.data);
+      //   setProducts(response.data)
+
+      
       const users = await getDocs(collection(fireDB, "products"));
       const productsArray = [];
-
       users.forEach((doc) => {
         const obj = {
           id: doc.id,
@@ -69,8 +74,10 @@ function HomePage() {
                 <div className="product-actions">
                    <h2>{product.price} RS/-</h2>
               <div className="d-flex">
-          <button>ADD TO CART</button>
-          <button>VIEW</button>
+          <button className="mx-2">ADD TO CART</button>
+          <button onClick={()=>{
+            navigate(`/productInfo/${product.id}`)
+          }}>VIEW</button>
         </div>
                </div>
 
