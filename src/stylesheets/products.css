@@ -35,7 +35,7 @@ opacity:1;
 }
 
 .total-amount{
-    background-color: skyblue;
+    background-color:#f7444e;
     padding:10px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -44,7 +44,7 @@ opacity:1;
 }
 
 .total-amount:hover{
-    background-color: darkcyan ;
+    background-color:  #df545b;;
     color: beige;
 }
 .order{
