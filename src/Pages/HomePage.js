@@ -4,10 +4,11 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import fireDB from "../fireConfig";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "../Components/Loader";
 //import { fireproducts } from "../firecommerce-products";
-
 function HomePage() {
   const [products, setProducts] = useState([]);
+  const[loading,setLoading]=useState(false)
   const navigate=useNavigate()
 const {cartItems}=useSelector((state)=>state.cartReducer);
   const dispatch=useDispatch();
@@ -21,7 +22,7 @@ const {cartItems}=useSelector((state)=>state.cartReducer);
       //   console.log(response.data);
       //   setProducts(response.data)
 
-      
+      setLoading(true)
       const users = await getDocs(collection(fireDB, "products"));
       const productsArray = [];
       users.forEach((doc) => {
@@ -34,8 +35,10 @@ const {cartItems}=useSelector((state)=>state.cartReducer);
       });
 
       setProducts(productsArray);
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   }
 
@@ -61,7 +64,7 @@ useEffect(()=>{
     dispatch({type:"ADD_TO_CART",payload:product})
   }
   return (
-    <Layout>
+    <Layout loading={loading}>
       <div className="container">
         <div className="banner"><img src="../assets/slider-bg.jpg" alt="" /></div>
         <div className="row">

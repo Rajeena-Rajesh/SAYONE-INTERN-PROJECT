@@ -4,11 +4,12 @@ import Layout from "../Components/Layout";
 import { getDoc, doc } from "firebase/firestore";
 import fireDB from "../fireConfig";
 import { useParams } from "react-router-dom";
+import Loader from "../Components/Loader";
 
 function ProductInfo() {
   const [product, setProduct] = useState();
   const params = useParams()
-  
+  const[loading,setLoading]=useState(false)
 
   useEffect(() => {
     getdata();
@@ -19,18 +20,20 @@ function ProductInfo() {
       // axios.get("http://localhost:4000/fireproducts").then((response) => {
       //   console.log(response.data);
       //   setProduct(response.data)
-
+setLoading(true)
       const productTemp = await getDoc(
         doc(fireDB, "products", params.productid)
       );
 
       setProduct(productTemp.data());
+      setLoading(false)
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   }
   return (
-    <Layout>
+    <Layout loading={loading}>
       
     <div className="container">
       <div className="row justify-content-center">

@@ -22,6 +22,7 @@
     color:white !important;
 }
 
+
 .footer{
     background-color: #f7444e;
     text-align: center;
@@ -46,6 +47,7 @@ button{
 button:hover{
     background-color: brown;
 }
+
 
 .loader{
     position:absolute;
