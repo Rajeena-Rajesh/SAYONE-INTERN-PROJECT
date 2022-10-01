@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaCartPlus, FaUser } from "react-icons/fa";
+import { useSelector } from "react-redux";
+
 
 function Header() {
+
+  const { cartItems } = useSelector((state) => state.cartReducer);
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,6 +41,12 @@ function Header() {
                 Orders
               </Link>
             </li>
+            
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Cart  {cartItems.length}
+              </Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Logout
@@ -44,9 +54,11 @@ function Header() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                Cart
+          Register
               </Link>
             </li>
+            
+            
           </ul>
         </div>
       </nav>
