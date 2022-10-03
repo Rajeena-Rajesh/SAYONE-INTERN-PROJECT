@@ -4,7 +4,7 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import fireDB from "../fireConfig";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Loader from "../Components/Loader";
+//import Loader from "../Components/Loader";
 //import { fireproducts } from "../firecommerce-products";
 function HomePage() {
   const [products, setProducts] = useState([]);

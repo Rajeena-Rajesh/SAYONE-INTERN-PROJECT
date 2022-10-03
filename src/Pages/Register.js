@@ -30,7 +30,7 @@ const validationSchema = yup.object({
     .required("Password is required!"),
 });
 
-function RegisterPage() {
+function Register() {
   return (
     <div>
       <Formik
@@ -77,4 +77,4 @@ function RegisterPage() {
   );
 }
 
-export default RegisterPage;
+export default Register;

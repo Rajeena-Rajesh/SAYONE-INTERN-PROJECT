@@ -1,59 +1,13 @@
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-// import Loader from "../Components/Loader";
-// import { toast } from "react-toastify";
-// import { Formik, Field, Form } from "formik";
-// import * as yup from "yup";
-// import KErrorMessage from "../Components/KErrorMessage";
-
-
-// const validationSchema = yup.object({
-  
-  
-//   email: yup
-//     .string()
-//     .matches(
-//       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-//       "Invalid Email"
-//     )
-//     .required("Email is Requied!"),
-//   password: yup
-//     .string()
-//     .matches(
-//       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-//       "Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character"
-//     )
-//     .required("Password is required!"),
-
-// });
+// import React, { useState } from 'react'
 
 // function RegisterPage() {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [cpassword, setCPassword] = useState("");
-//   const [loading, setLoading] = useState(false);
-//   const auth = getAuth();
 
-//   const register = async () => {
-//     try {
-//       setLoading(true);
-//       const result = await createUserWithEmailAndPassword(
-//         auth,
-//         email,
-//         password
-//       );
-//       setLoading(false);
-//       toast.success("Registration successfull");
-//       setEmail("");
-//       setPassword("");
-//       setCPassword("");
-//     } catch (error) {
-//       console.log(error);
-//       toast.error("Registration Failed");
-//       setLoading(false);
-//     }
-//   };
+//     const intialValues = { email: "", password: "" };
+//   const [formValues, setFormValues] = useState(intialValues);
+//   const [formErrors, setFormErrors] = useState({});
+//   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  
 //   return (
 //     <div>
 //       <Formik
@@ -118,7 +72,9 @@
 //         </Form>
 //       </Formik>
 //     </div>
-//   );
+//   )
 // }
 
-// export default RegisterPage;
+// export default RegisterPage
+
+
