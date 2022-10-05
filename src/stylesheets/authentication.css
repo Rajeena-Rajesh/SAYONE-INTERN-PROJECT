@@ -19,7 +19,7 @@
  }
  
  .register-parent{
- height:100vh;
+ min-height:100vh;
  background-color: aliceblue;
  
  }
@@ -35,7 +35,7 @@
      left:0;
      right:0;
      top:0;
-     background-color: darkcyan;
+     background-color: #df545b;
       z-index:0 !important;
  }
  
