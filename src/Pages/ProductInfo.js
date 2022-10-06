@@ -4,7 +4,7 @@ import Layout from "../Components/Layout";
 import { getDoc, doc } from "firebase/firestore";
 import fireDB from "../fireConfig";
 import { useParams } from "react-router-dom";
-import Loader from "../Components/Loader";
+
 
 function ProductInfo() {
   const [product, setProduct] = useState();
@@ -43,9 +43,7 @@ setLoading(true)
             <img src={product.imageURL} alt="" className="product-img-info" />
             <hr />
             <p>{product.description}</p>
-            <div className="d-flex justify-content-end my-3">
-              <button >ADD TO CART</button>
-            </div>
+            
           </div>
           
           )}
