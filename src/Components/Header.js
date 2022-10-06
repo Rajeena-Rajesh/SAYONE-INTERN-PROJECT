@@ -7,6 +7,14 @@ import { useSelector } from "react-redux";
 function Header() {
 
   const { cartItems } = useSelector((state) => state.cartReducer);
+//const {user} =JSON.parse(localStorage.getItem('currentUser'))
+  //console.log(user)
+
+  const logout=()=>{
+    localStorage.removeItem("currentUser");
+    window.location.reload();
+  }
+
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,26 +37,24 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav  ms-auto">
             <li className="nav-item active">
-              <Link className="nav-link active" aria-current="page" to="/">
-              {/* <FaUser /> {user.email.substring(0, user.email.length - 10)} */}
-              </Link>
+              {/* <Link className="nav-link active" aria-current="page" to="/">
+               <FaUser /> {user.email.substring(0, user.email.length - 10)} 
+              </Link> */}
             </li>
-            {/* <li className="nav-item">
-        <Link className="nav-link" to="/">User</Link>
-      </li> */}
+            
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              {/* <Link className="nav-link" to="/Orders">
                 Orders
-              </Link>
+              </Link> */}
             </li>
             
             <li className="nav-item">
               <Link className="nav-link" to="/Cart">
-                Cart  {cartItems.length}
+             <FaCartPlus/> {cartItems.length}
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Login">
+              <Link className="nav-link" to="/RegisterPage" onClick={logout}>
                 Logout
               </Link>
             </li>

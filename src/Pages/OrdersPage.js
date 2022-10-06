@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import fireDB from "../fireconfig";
+import fireDB from "../fireConfig";
 import Layout from "../Components/Layout";
 
 function OrdersPage() {
@@ -31,7 +31,7 @@ function OrdersPage() {
     <Layout loading={loading}>
       <div className="p-2">
         {orders
-          .filter((obj) => obj.userid == userId)
+          .filter((obj) => obj.userid === userId)
           .map((order) => {
             return (
               <table className="table mt-3 order">

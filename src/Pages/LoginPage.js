@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 
 import { useFormik } from "formik"; //form handling
 import { signUpSchema } from "../schemas";
+import { toast } from "react-toastify";
 
 const initialValues = {
   email: "",
@@ -24,17 +25,21 @@ const LoginPage = () => {
     });
 
   const auth = getAuth();
+
   const login = async () => {
     try {
       const result = signInWithEmailAndPassword(auth,
         values.email,
         values.password
       );
-localStorage.setItem("currentUser",JSON.stringify(result));
-
-window.location.href="/"
+      //console.log(result)
+      
+localStorage.setItem("currentUser",JSON.stringify({email:values.email,password:values.password}));
+//toast.success('Login Successfull')
+//window.location.href="/"
     } catch (error) {
       console.log(error);
+      //toast.error('Login Failed')
     }
   };
 
@@ -53,7 +58,7 @@ window.location.href="/"
                 name="email"
                 type="text"
                 placeholder="email"
-                // autoComplete="off"
+                 autoComplete="off"
                 onChange={handleChange}
                 values={values.email}
                 onBlurr={handleBlurr}
@@ -66,7 +71,7 @@ window.location.href="/"
                className="form-control"
                 name="password"
                 type="text"
-                //autoComplete="off"
+                autoComplete="off"
                 placeholder="Password"
                 onChange={handleChange}
                 values={values.password}

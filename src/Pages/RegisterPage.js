@@ -31,8 +31,11 @@ const RegisterPage = () => {
         values.email,
         values.password
       );
+      console.log(result)
+      //toast.success('Registration Successfull')
     } catch (error) {
       console.log(error);
+      //toast.error(Registration Failed)
     }
   };
 
@@ -101,11 +104,11 @@ const RegisterPage = () => {
               ) : null}
 
               <button className="my-3" onClick={register} type="submit">
-                Submit
+                Register
               </button>
 
               <hr />
-              <Link to='/Login'>Already registered, Click here to Login!</Link>
+              <Link to='/LoginPage'>Already registered, Click here to Login!</Link>
             </div>
           </form>
         </div>
